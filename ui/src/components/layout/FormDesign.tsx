@@ -38,7 +38,7 @@ interface Props {
 }
 
 const FormDesign: React.FC<Props> = ({ onClose }) => {
-  const { poll, updatePoll } = usePoll();
+  const { poll, setPoll } = usePoll();
   const [styles, setStyles] = useState({
     title: { fontSize: 24, fontFamily: "Arial" },
     question: { fontSize: 12, fontFamily: "Alef" },
@@ -80,7 +80,7 @@ const FormDesign: React.FC<Props> = ({ onClose }) => {
       },
     };
 
-    updatePoll({ ...poll, design: updatedDesign });
+    setPoll({ ...poll, design: updatedDesign });
 
     updatePollMutation(
       {
@@ -110,7 +110,7 @@ const FormDesign: React.FC<Props> = ({ onClose }) => {
         [key]: value,
       },
     };
-    updatePoll({ ...poll, design: updatedDesign });
+    setPoll({ ...poll, design: updatedDesign });
     updatePollMutation(
       {
         pollId: poll._id,
@@ -139,7 +139,7 @@ const FormDesign: React.FC<Props> = ({ onClose }) => {
       },
     };
 
-    updatePoll({ ...poll, design: updatedDesign });
+    setPoll({ ...poll, design: updatedDesign });
 
     updatePollMutation(
       {
@@ -163,7 +163,7 @@ const FormDesign: React.FC<Props> = ({ onClose }) => {
       color,
     };
 
-    updatePoll({ ...poll, design: updatedDesign });
+    setPoll({ ...poll, design: updatedDesign });
     setStyles((prev) => ({ ...prev, color }));
 
     updatePollMutation(
@@ -188,7 +188,7 @@ const FormDesign: React.FC<Props> = ({ onClose }) => {
       backgroundColor: color,
     };
 
-    updatePoll({ ...poll, design: updatedDesign });
+    setPoll({ ...poll, design: updatedDesign });
 
     updatePollMutation(
       {

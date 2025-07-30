@@ -226,15 +226,3 @@ export interface SelectedItem {
   type: "SurveySection" | "Question";
   id: string;
 }
-
-
-
-// -------------------- סוג חדש שכולל את כל הפונקציות --------------------
-export interface PollContextType {
-  poll: IPoll;
-  setPoll: (poll: IPoll) => void;
-  updatePoll: (poll: IPoll) => void;
-  undo: () => void;
-  redo: () => void;
-  pushToHistory: (poll: IPoll) => void;
-}
