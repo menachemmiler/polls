@@ -8,6 +8,7 @@ import Loading from "./components/shared/Loading";
 import NotFoundPage from "./pages/404Page";
 
 import { useShragaUser } from "./utils/hooks";
+import { ActionHistoryProvider } from "./context/ActionHistoryContext";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AboutPage = lazy(() => import("./pages/About"));
@@ -19,21 +20,22 @@ const App: FC = () => {
 
   return (
     <AppWrapper>
-      <Suspense fallback={<Loading />}>
-      
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/poll/:pollId" element={<CreateEditFormPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/response/:pollId" element={<ResponsePage />} />
-          <Route
-            path="/preview/:pollId"
-            element={<ResponsePage preview={true} />}
-          />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense>
-      <ToastContainer position="top-center" autoClose={2000} />
+      <ActionHistoryProvider>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/poll/:pollId" element={<CreateEditFormPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/response/:pollId" element={<ResponsePage />} />
+            <Route
+              path="/preview/:pollId"
+              element={<ResponsePage preview={true} />}
+            />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
+        <ToastContainer position="top-center" autoClose={2000} />
+      </ActionHistoryProvider>
     </AppWrapper>
   );
 };

@@ -68,13 +68,13 @@ const CreateEditFormPage = () => {
     if (
       activeTab === TabType.RESPONSES &&
       !jumpedBackRef.current &&
-      window.performance?.navigation?.type === 1 
+      window.performance?.navigation?.type === 1
     ) {
       jumpedBackRef.current = true;
       setSearchParams({ tab: TabType.QUESTIONS });
       setTimeout(() => {
         setSearchParams({ tab: TabType.RESPONSES });
-      }, 80); 
+      }, 80);
     }
   }, [activeTab, setSearchParams]);
 

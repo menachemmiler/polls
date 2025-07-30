@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Eye, Link, UserPlus2, Palette, SlidersHorizontal } from "lucide-react";
+import {
+  Eye,
+  Link,
+  UserPlus2,
+  Palette,
+  SlidersHorizontal,
+  Undo2,
+  Redo2,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import forms_logo from "../../assets/forms_logo.svg";
 import { useUserStore } from "../../stores/user";
@@ -11,6 +19,7 @@ import PublishPopup from "../../features/tabs/PublishPopup";
 import SharePopover from "./SharePopover";
 import PublishedOptionsPopup from "./PublishedOptions";
 import FormDesign from "./FormDesign";
+import { useActionHistory } from "../../context/ActionHistoryContext";
 
 interface NavbarProps {
   poll: IPoll;
@@ -68,6 +77,8 @@ const Navbar: React.FC<NavbarProps> = ({ poll, onSaved }: NavbarProps) => {
     );
   };
 
+  const { undo, redo } = useActionHistory();
+
   return (
     <div
       className="sticky top-0 z-50 flex items-center justify-between px-4 py-4 bg-white"
@@ -121,10 +132,26 @@ const Navbar: React.FC<NavbarProps> = ({ poll, onSaved }: NavbarProps) => {
           <Palette className="text-gray-600 w-5 h-5" />
         </div>
 
+        <div
+          title="בטל"
+          className="p-2 rounded-full hover:bg-gray-200 transition cursor-pointer"
+          onClick={undo}
+        >
+          <Undo2 className="text-gray-600 w-5 h-5" />
+        </div>
+
+        <div
+          title="ביצוע חוזר"
+          className="p-2 rounded-full hover:bg-gray-200 transition cursor-pointer"
+          onClick={redo}
+        >
+          <Redo2 className="text-gray-600 w-5 h-5" />
+        </div>
+
         {showFormDesign && (
           //צריך לשנות גובה אבסלוטי לגובה הקומפוננטה של שאלות
           <div className="fixed top-[93.5px] left-0 w-[350px] h-[calc(100vh-64px)] bg-white shadow-lg z-50 overflow-y-auto">
-            <FormDesign  onClose={() => setShowFormDesign(false)} />
+            <FormDesign onClose={() => setShowFormDesign(false)} />
           </div>
         )}
 

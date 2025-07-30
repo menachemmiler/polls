@@ -1,7 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useApiMutation } from "../hooks/useApiMutation";
 import { useApiQuery } from "../hooks/useAxiosQuery";
-import { toastService } from "../services/toastService";
+import { toastService } from "./toastService";
 import {
   CanResponsePoll,
   CreateQuestionDTO,
