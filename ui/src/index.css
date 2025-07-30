@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import "./styles/breakpoints.css";
+@import "./styles/palette.css";
+@import "./styles/radius.css";
+@import "./styles/typography.css";
+
+.no-border {
+  border: none !important;
+  box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+
+}
+
+.recharts-responsive-container, 
+.recharts-wrapper, 
+.recharts-surface, 
+.recharts-pie-chart {
+  border: none !important;
+  box-shadow: none !important;
+}
+.recharts-wrapper > svg {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.recharts-default-legend {
+  margin-left: 16 !important;
+  line-height: 20px !important;
+  height: 90% !important;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.input-accent { accent-color: #4d2b87 !important; }

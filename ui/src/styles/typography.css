@@ -1,0 +1,26 @@
+@theme {
+  --font-sans: 'Google Sans', 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+  --font-serif: 'Georgia', serif;
+  --font-mono: 'Menlo', monospace;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/ProductSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/ProductSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* אופציונלי, אם תרצה גם bold: */
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/ProductSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

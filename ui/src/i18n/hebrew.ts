@@ -1,0 +1,63 @@
+export default {
+  common: {
+    confirm: "אישור",
+    cancel: "ביטול",
+    save: "שמירה",
+    search: "חיפוש",
+    language: "שפה",
+  },
+  filterBar: {
+    title: "טפסים אחרונים",
+    ownership: {
+      all: "לא משנה מי הבעלים",
+      owner: "בבעלותי",
+      notOwner: "לא בבעלותי",
+    },
+    sortBy: {
+      updatedRecently: "עודכנו לאחרונה",
+      recentFirst: "מהחדש לישן",
+      oldestFirst: "מהישן לחדש",
+      nameAsc: "לפי שם (א' - ת')",
+      nameDesc: "לפי שם (ת' - א')",
+    },
+    viewToggle: {
+      ariaLabel: "החלף תצוגה",
+      title: "החלף תצוגת רשת / רשימה",
+    },
+    filterTitle: "סינון לפי בעלים",
+    sortTitle: "מיון טפסים",
+  },
+  formDisplay: {
+    rename: "שינוי שם",
+    delete: "הסרה",
+    openInNewTab: "פתיחה בכרטיסייה חדשה",
+    deleteConfirmTitle: "האם למחוק את הטופס?",
+    deleteConfirmMessage:
+      'הטופס "{{name}}" יימחק לצמיתות ולא ניתן יהיה לשחזר אותו.',
+    deleteConfirmButton: "העברה לאשפה",
+    updatedAt: "עודכן ב־{{date}}",
+    pollPublished: "הסקר פורסם",
+    errorCreatePoll: "יצירת סקר חדש נכשלה",
+    newPollDefaultName: "טופס ללא שם",
+    newPollDefaultTitle: "טופס ללא כותרת",
+    startNewForm: "התחלת טופס חדש",
+    noResults: "לא נמצאו תוצאות",
+    clearSearchHistory: "🗑️ נקה היסטוריית חיפוש",
+    loadingErrorTitle: "לא הצלחנו לטעון את הטפסים שלך",
+    loadingErrorSubtitle: "ודא שיש לך חיבור לאינטרנט ונסה שוב",
+    retryButton: "נסה שוב",
+    noFormsCreated: "עדיין לא נוצרו טפסים",
+    getStartedText: "כדי להתחיל, בחר טופס ריק או השתמש בתבנית למעלה",
+  },
+  NewForm: {
+    newPollDefaultName: "טופס ללא שם",
+    newPollDefaultTitle: "טופס ללא כותרת",
+    startNewForm: "התחלת טופס חדש",
+  },
+  SearchForm: {
+    searchPlaceholder: "חיפוש",
+    formIcon: "אייקון טופס",
+    noResults: "לא נמצאו תוצאות",
+    clearSearchHistory: "🗑️ נקה היסטוריית חיפוש",
+  },
+};

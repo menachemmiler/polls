@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Transpiled files
+dist/
+
+# jest coverage static server
+coverage/
+
+# Package lock
+package-lock.json

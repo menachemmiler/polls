@@ -1,0 +1,47 @@
+services:
+  mongo:
+    image: mongo
+    container_name: statistics-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - statistics-network
+
+  statistics:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: statistics
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    ports:
+      - "8000:8000"
+    networks:
+      - statistics-network
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    container_name: statistics-test
+    env_file:
+      - .env.test  
+    depends_on:
+      - mongo
+    networks:
+      - statistics-network
+
+
+volumes:
+  mongo-data:
+    name: mongo-data
+
+networks:
+  statistics-network:
+    name: statistics-network

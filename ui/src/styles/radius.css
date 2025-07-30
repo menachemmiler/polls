@@ -1,0 +1,11 @@
+@theme {
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-xxl: 16px;
+  --radius-xxxl: 24px;
+  --radius-xxxxl: 32px;
+  --radius-pill: 9999px;
+}
